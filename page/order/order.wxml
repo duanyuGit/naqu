@@ -1,0 +1,99 @@
+<wxs src="../../common/tools.wxs" module="tools" />
+<import src="../../common/toast.wxml" />
+<template is="toast" data="{{isToastShow,toastContent}}" />
+
+<view class="page-order">
+    <block wx:if="{{isloading}}">
+        <loading hidden="{{!isloading}}">加载中...</loading>
+    </block>
+    <block wx:else>
+        <block wx:if="{{hasAddress}}">
+            <navigator url="../address/list/list?addrId={{address.id}}" class="has-address">
+                <view class="has-address-left">
+                    <image class="has-address-left-img" mode="widthFix" src="/img/location.png" />
+                </view>
+                <view class="has-address-middle">
+                    <view class="has-address-middle-above">
+                        <view class="has-address-middle-above-left">
+                            <text class="has-address-middle-above-person">收货人：{{address.name}}</text>
+                        </view>
+                        <view class="has-address-middle-above-right">
+                            <text class="has-address-middle-above-tel">{{tools.phone4hide(address.phoneNumber)}}</text>
+                        </view>
+                    </view>
+                    <view class="has-address-middle-below">
+                        <text class="has-address-middle-address twoline">收货地址：{{address.intactAddress}}</text>
+                    </view>
+                </view>
+                <view class="has-address-right">
+                    <image class="has-address-right-image" mode="widthFix" src="/img/toright.png" />
+                </view>
+            </navigator>
+        </block>
+        <block wx:else>
+            <navigator url="../address/addedit/addedit?source=order" class="no-address">
+                <view class="no-address-left">
+                    <text class="no-address-left-text">请添加收货地址</text>
+                </view>
+                <view class="no-address-right">
+                    <image class="no-address-right-image" mode="widthFix" src="/img/toright.png" />
+                </view>
+            </navigator>
+        </block>
+        <view class="address-line">
+            <image class="address-line-image" src="/img/addressline.png"></image>
+        </view>
+        <view class="order-product">
+            <view class="order-product-item">
+                <view class="order-product-item-left">
+                    <image class="order-product-item-image" mode="widthFix" src="{{product.shoppingCartItems[0].product.mainImage.url||'/img/default.jpg'}}" />
+                </view>
+                <view class="order-product-item-middle">
+                    <view class="order-product-item-title">
+                        <text class="order-product-item-title-text twoline">{{product.shoppingCartItems[0].product.title}}</text>
+                    </view>
+                    <view class="order-product-item-skuinfo">
+                        <text class="order-product-item-skuinfo-text twoline">{{product.shoppingCartItems[0].product.specStr}}</text>
+                    </view>
+                </view>
+                <view class="order-product-item-right">
+                    <view class="order-product-item-price">
+                        <text class="order-product-item-price-int">￥{{tools.money(product.shoppingCartItems[0].product.formatPrice,2,2)}}.</text>
+                        <text class="order-product-item-price-float">{{tools.money(product.shoppingCartItems[0].product.formatPrice,2,3)}}</text>
+                    </view>
+                    <view class="order-product-item-count">
+                        <text class="order-product-item-count-text">x{{product.shoppingCartItems[0].count}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="order-money">
+            <view class="order-express-fee">
+                <view class="order-express-fee-left">
+                    <text class="order-express-fee-txt">运费</text>
+                </view>
+                <view class="order-express-fee-right">
+                    <text class="order-express-fee-text">￥{{tools.money(product.freight,2,1)}}</text>
+                </view>
+            </view>
+            <view class="order-total-fee">
+                <text class="order-total-fee-amount">共{{product.shoppingCartItems[0].count}}件商品</text>
+                <view class="order-total-fee-money">
+                    <text class="order-total-fee-money-text">小计：</text>
+                    <text class="order-total-fee-money-rmb">￥</text>
+                    <text class="order-total-fee-money-int">{{tools.money(product.paySum,2,2)}}</text>
+                    <text class="order-total-fee-money-float">.{{tools.money(product.paySum,2,3)}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="order-pay">
+            <view class="order-pay-money">
+                <text class="order-pay-money-text">合计：</text>
+                <text class="order-pay-money-rmb">￥</text>
+                <text class="order-pay-money-int">{{tools.money(product.paySum,2,2)}}</text>
+                <text class="order-pay-money-float">.{{tools.money(product.paySum,2,3)}}</text>
+            </view>
+            <view class="order-pay-go" bindtap="payTap">微信支付</view>
+        </view>
+    </block>
+</view>

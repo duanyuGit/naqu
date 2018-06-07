@@ -1,0 +1,372 @@
+.no-address {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 90rpx;
+    background-color: #fff;
+    border-top: 1rpx solid #ddd;
+    vertical-align: top;
+}
+
+.no-address:active {
+    opacity: 0.8;
+}
+
+.no-address-left-text {
+    display: inline-block;
+    margin-left: 24rpx;
+    font-weight: 700;
+    font-size: 32rpx;
+    color: #333;
+    line-height: 32rpx;
+}
+
+.no-address-right-image {
+    width: 14rpx;
+    height: 28rpx;
+    margin-right: 32rpx;
+    vertical-align: middle;
+}
+
+.has-address {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: 182rpx;
+    background-color: #fff;
+    border-top: 1rpx solid #ddd;
+}
+
+.has-address:active {
+    opacity: 0.8;
+}
+
+.has-address-left {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 86rpx;
+    line-height: 182rpx;
+}
+
+.has-address-left-img {
+    width: 30rpx;
+    margin-left: 31rpx;
+}
+
+.has-address-middle {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.has-address-middle-above {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 45rpx;
+    margin-top: 30rpx;
+}
+
+.has-address-middle-above-left {
+    height: 45rpx;
+    vertical-align: top;
+}
+
+.has-address-middle-above-person {
+    font-weight: 700;
+    font-size: 32rpx;
+    color: #333;
+    vertical-align: top;
+}
+
+.has-address-middle-above-right {
+    height: 45rpx;
+    vertical-align: top;
+}
+
+.has-address-middle-above-tel {
+    font-weight: 700;
+    font-size: 32rpx;
+    color: #333;
+    vertical-align: top;
+}
+
+.has-address-middle-below {
+    margin-top: 12rpx;
+}
+
+.has-address-middle-address {
+    font-size: 26rpx;
+    color: #333;
+}
+
+.has-address-right {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 65rpx;
+    line-height: 182rpx;
+}
+
+.has-address-right-image {
+    width: 15rpx;
+    margin-left: 18rpx;
+}
+
+.address-line {
+    height: 9rpx;
+}
+
+.address-line-image {
+    width: 100%;
+    height: 9rpx;
+    vertical-align: top;
+}
+
+.order-product {
+    background-color: #fff;
+    padding-top: 20rpx;
+}
+
+.order-product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: 176rpx;
+    background-color: #f5f5f5;
+}
+
+.order-product-item-left {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 200rpx;
+    height: 176rpx;
+    line-height: 176rpx;
+    text-align: center;
+}
+
+.order-product-item-image {
+    width: 152rpx;
+    height: 152rpx;
+    vertical-align: middle;
+}
+
+.order-product-item-middle {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.order-product-item-title {
+    margin-top: 12rpx;
+}
+
+.order-product-item-title-text {
+    display: -webkit-box;
+    font-size: 26rpx;
+    color: #333;
+    line-height: 34rpx;
+}
+
+.order-product-item-skuinfo {
+    margin-top: 10rpx;
+}
+
+.order-product-item-skuinfo-text {
+    display: -webkit-box;
+    width: 100%;
+    font-size: 24rpx;
+    color: #999;
+    line-height: 26rpx;
+}
+
+.order-product-item-right {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 185rpx;
+    text-align: right;
+    vertical-align: top;
+}
+
+.order-product-item-price {
+    height: 30rpx;
+    margin: 12rpx 24rpx 0 0;
+    vertical-align: top;
+}
+
+.order-product-item-price-int {
+    display: inline-block;
+    font-size: 30rpx;
+    color: #333;
+    line-height: 30rpx;
+    vertical-align: top;
+}
+
+.order-product-item-price-float {
+    display: inline-block;
+    font-size: 24rpx;
+    color: #151515;
+    line-height: 30rpx;
+    vertical-align: top;
+    margin-top: 2rpx;
+}
+
+.order-product-item-count {
+    height: 26rpx;
+    margin: 10rpx 24rpx 0 0;
+    vertical-align: top;
+}
+
+.order-product-item-count-text {
+    display: inline-block;
+    font-size: 26rpx;
+    color: #999;
+    line-height: 26rpx;
+    vertical-align: top;
+}
+
+.order-money {
+    background-color: #fff;
+}
+
+.order-express-fee {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 90rpx;
+    position: relative;
+}
+
+.order-express-fee::after {
+    content: '';
+    position: absolute;
+    left: 24rpx;
+    bottom: 0;
+    right: 24rpx;
+    border-bottom: 1rpx #ddd solid;
+}
+
+.order-express-fee-left {
+    margin-left: 24rpx;
+}
+
+.order-express-fee-txt {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.order-express-fee-right {
+    margin-right: 24rpx;
+}
+
+.order-express-fee-text {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 28rpx;
+}
+
+.order-total-fee {
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: right;
+}
+
+.order-total-fee-amount {
+    display: inline-block;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.order-total-fee-money {
+    display: inline-block;
+    margin: 0 24rpx 0 10rpx;
+}
+
+.order-total-fee-money-text {
+    display: inline-block;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.order-total-fee-money-rmb {
+    display: inline-block;
+    font-size: 24rpx;
+    color: #38b8ff;
+    line-height: 37rpx;
+}
+
+.order-total-fee-money-int {
+    display: inline-block;
+    font-size: 36rpx;
+    color: #38b8ff;
+    line-height: 37rpx;
+}
+
+.order-total-fee-money-float {
+    display: inline-block;
+    font-size: 24rpx;
+    color: #38b8ff;
+    line-height: 37rpx;
+}
+
+.order-pay {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: right;
+    background-color: #fff;
+    border-top: 1rpx solid #e4e4e4;
+}
+
+.order-pay-money {
+    display: inline-block;
+    margin-right: 22rpx;
+}
+
+.order-pay-money-text {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.order-pay-money-rmb {
+    font-size: 24rpx;
+    color: #38b8ff;
+    line-height: 42rpx;
+}
+
+.order-pay-money-int {
+    font-size: 36rpx;
+    color: #38b8ff;
+    line-height: 42rpx;
+}
+
+.order-pay-money-float {
+    font-size: 24rpx;
+    color: #38b8ff;
+    line-height: 42rpx;
+}
+
+.order-pay-go {
+    display: inline-block;
+    width: 220rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 34rpx;
+    color: #fff;
+    background-color: #38b8ff;
+}
+
+.order-pay-go:active {
+    background-color: #1ea1e9;
+}

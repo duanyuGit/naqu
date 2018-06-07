@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "page/index/index",
+    "page/product/product",
+    "page/order/order",
+    "page/address/list/list",
+    "page/address/addedit/addedit",
+    "page/paysuccess/paysuccess",
+    "page/publish/publish",
+    "page/mine/mine"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "拿去",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "page/index/index",
+        "text": "首页",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home-actived.png"
+      },
+      {
+        "pagePath": "page/publish/publish",
+        "text": "发布",
+        "iconPath": "img/create.png",
+        "selectedIconPath": "img/create-actived.png"
+      },
+      {
+        "pagePath": "page/mine/mine",
+        "text": "我的",
+        "iconPath": "img/profile.png",
+        "selectedIconPath": "img/profile-actived.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 60000,
+    "uploadFile": 60000,
+    "downloadFile": 60000
+  },
+  "debug": true
+}

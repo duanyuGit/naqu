@@ -1,0 +1,9 @@
+@keyframes fadeIn50 {
+    from {
+        opacity: 0; /*初始状态 透明度为0*/
+    }
+
+    to {
+        opacity: 0.5; /*结尾状态 透明度为0.5*/
+    }
+}

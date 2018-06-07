@@ -1,0 +1,56 @@
+@import "common/weui.wxss";
+@import "common/animate.wxss";
+@import "common/toast.wxss";
+
+/*!修改每个页面的背景色*/
+
+page {
+    width: 100%;
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+/*!缩小radio*/
+
+radio {
+    transform: scale(0.8, 0.8);
+}
+
+/*!修改padding*/
+
+.weui-cell {
+    padding: 10px;
+}
+
+/*!去除.weui-cells的上下边框*/
+
+.clear-border::before, .clear-border::after {
+    content: "";
+    height: 0;
+    border: none;
+}
+
+/*!单行超出部分以省略号显示*/
+
+.singleline {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*!超出两行以省略号显示*/
+
+.twoline {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}

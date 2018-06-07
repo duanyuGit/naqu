@@ -1,0 +1,28 @@
+<import src="../../common/toast.wxml" />
+<template is="toast" data="{{isToastShow,toastContent}}" />
+
+
+<view class='view-content'>
+  <view class='view-publish-content'>
+    <view class='view-photo'>
+      <image class='img-photo' src='/img/sh.png' />
+    </view>
+    <view class='view-separate' />
+    <view class='view-desc'>
+      <textarea placeholder-class="gray" placeholder="描述下你的宝贝，说个故事也成" bindinput="nameChange" confirm-type="send" />
+    </view>
+    <view class='view-tag'>标签位置</view>
+    <view class='view-separate' />
+    <view class='view-location'>
+      <view class='left'>
+        <image class='img' src='/img/location.png' />
+        <text class='text'>添加地理位置</text>
+      </view>
+      <view class='right'>
+        <image class='arrow' src='/img/toright.png' />
+      </view>
+    </view>
+    <view class='view-separate' />
+  </view>
+  <view class='view-publish'><text>确认发布</text></view>
+</view>

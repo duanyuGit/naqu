@@ -1,0 +1,41 @@
+<wxs src="../../../common/tools.wxs" module="tools" />
+<import src="../../../common/toast.wxml" />
+<template is="toast" data="{{isToastShow,toastContent}}" />
+
+<template name="addressItem">
+    <view class="page-address-list-item">
+        <view class="page-address-list-item-lm" data-address-item="{{ item }}" bindtap="selectTap">
+            <view class="page-address-list-item-l">
+                <image class="page-address-list-item-img" mode="widthFix" src="{{ item.id==selectAddrId?'/img/allright.png':'/img/circle.png' }}" />
+            </view>
+            <view class="page-address-list-item-m">
+                <view class="page-address-list-item-m-a">
+                    <text class="page-address-list-item-name common">{{ item.name }}</text>
+                    <text class="page-address-list-item-phone common">{{tools.phone4hide(item.phoneNumber)}}</text>
+                </view>
+                <view class="page-address-list-item-m-b">
+                    <block wx:if="{{ item.isDefault }}">
+                        <text class="default-class common">默认</text>
+                    </block>
+                    <text class="page-address-list-item-addr common">{{ item.intactAddress }}</text>
+                </view>
+            </view>
+        </view>
+        <view class="page-address-list-item-r" data-address-item="{{ item }}" bindtap="editTap">
+            <text class="page-address-list-item-edit">编辑</text>
+        </view>
+    </view>
+</template>
+<view class="page-address-list">
+    <block wx:if="{{isloading}}">
+        <loading hidden="{{!isloading}}">加载中...</loading>
+    </block>
+    <block wx:else>
+        <block wx:for="{{ addressList }}" wx:key="{{ index }}">
+            <template is="addressItem" data="{{ item,selectAddrId }}" />
+        </block>
+        <view class="page-address-list-bottom">
+            <navigator url="../addedit/addedit?type=add" class="page-address-list-add">新增收货地址</navigator>
+        </view>
+    </block>
+</view>

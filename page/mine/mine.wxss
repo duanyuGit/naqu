@@ -1,0 +1,78 @@
+/* pages/mine/mine.wxss */
+
+.header {
+  width: 100%;
+  padding: 0rpx 30rpx 0rpx 30rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .user {
+   display: flex;
+   flex-flow: row nowrap;
+}
+
+.header .user .avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: 2px solid #fee767;
+}
+
+.header .user .info  {
+  margin-left: 20rpx;
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+
+.header .user .nickname {
+  font-size: 32rpx;
+  color: #000;
+  line-height: 46rpx;
+}
+
+.header .user .address {
+    font-size: 26rpx;
+    color: #999; 
+}
+
+
+.header .arrow {
+  width: 21rpx;
+  height: 42rpx;
+  margin-right: 60rpx;
+}
+
+.section {
+  padding: 0;
+  color: #2e2e2e;
+  font-size: 30rpx;
+}
+
+.section .line {
+  margin-left: 30rpx;
+  padding-right: 30rpx;
+  line-height: 3;
+  border-bottom: 1px solid #efefef;
+}
+
+.section .line:last-child {
+  border-bottom: none;
+}
+
+.section .line:before {
+  content: '>';
+  float: right;
+  color: #aaa;
+  margin-left: 20rpx;
+}
+
+.section .line .tl {
+  float: right;
+  color: #aaa;
+}

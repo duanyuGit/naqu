@@ -1,0 +1,50 @@
+<import src="../../common/toast.wxml" />
+<template is="toast" data="{{isToastShow,toastContent}}" />
+
+<template name="feed">
+  <view class="product" data-product-id="{{item.id}}" bindtap="goDetail">
+  <!-- 头部 用户及时间区域 -->
+    <view class="head">
+      <view class="user">
+        <image class="avatar" src="{{item.mainImage.url}}"></image>
+        <view class='user-info'>
+          <view class="nickname">昵称</view>
+          <view class="address">地址</view>
+        </view>
+      </view>
+      <view class="time">2018.6.6 11:52</view>
+    </view>
+    <!-- 内容区域 -->
+    <image class="img" src="{{item.mainImage.url}}"></image>
+    <view class="title-main twoline">{{item.name}}</view>
+    <!-- <view class="title-sub singleline">{{item.desc}}</view> -->
+    <view class="info">
+       <view class="left"> 
+          <block wx:for="{{imgUrls}}" wx:key="id" wx:for-item="itemName"> 
+              <image class="like-users-avatar" src="{{itemName}}"></image> 
+          </block> 
+       </view> 
+       <view class="right">
+       <view class="vote-view" bindtap="vote">
+            <image class="vote-img" src="/img/btn-vote.png"></image>
+        </view>
+        <view class="forward-view" bindtap="forward">
+            <image class="forward-img" src="/img/btn_feed_forward_normal.png"></image>
+        </view>
+      </view> 
+    </view>
+  </view>
+</template>
+
+<view class="page-index">
+  <view class="slide">
+    <swiper indicator-dots="true" autoplay="true" interval="3000" duration="500">
+      <swiper-item wx:for="{{imgUrls}}" wx:key="id">
+        <image src="{{item}}" mode="aspectFill" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <block wx:for="{{goodList}}" wx:key="{{item.id}}">
+    <template is="feed" data="{{item,imgUrls}}" />
+  </block>
+</view>

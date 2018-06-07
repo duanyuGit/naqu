@@ -1,0 +1,130 @@
+page {
+    background-color: #fff;
+    border-top: 1rpx #ddd solid;
+}
+
+.page-address-list-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-address-list-item::after {
+    content: '';
+    position: absolute;
+    left: 32rpx;
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px #ddd solid;
+}
+
+.page-address-list-item-lm {
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-address-list-item-lm:active {
+    opacity: 0.6;
+}
+
+.page-address-list-item-l {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 70rpx;
+    padding-left: 32rpx;
+    line-height: 100%;
+}
+
+.page-address-list-item-img {
+    width: 34rpx;
+    height: 34rpx;
+    vertical-align: top;
+}
+
+.page-address-list-item-m {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.page-address-list-item-m-a {
+    height: 30rpx;
+    margin-top: 28rpx;
+}
+
+.common {
+    display: inline-block;
+    font-size: 30rpx;
+    color: #333;
+    line-height: 30rpx;
+    vertical-align: top;
+    word-break: break-all;
+}
+
+.page-address-list-item-name {
+    margin-right: 30rpx;
+}
+
+.page-address-list-item-m-b {
+    margin: 16rpx 0 24rpx 0;
+    line-height: 40rpx;
+}
+
+.page-address-list-item-addr {
+    display: inline;
+    vertical-align: middle;
+}
+
+.page-address-list-item-r {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100rpx;
+    padding-right: 32rpx;
+    text-align: right;
+}
+
+.page-address-list-item-r:active {
+    opacity: 0.6;
+}
+
+.page-address-list-item-edit {
+    display: inline-block;
+    font-size: 30rpx;
+    color: #38b8ff;
+    vertical-align: baseline;
+}
+
+.page-address-list-bottom {
+    margin-top: 56rpx;
+    text-align: center;
+}
+
+.page-address-list-add {
+    width: 344rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    margin: auto;
+    font-size: 34rpx;
+    color: #fff;
+    letter-spacing: 0;
+    background: #38b8ff;
+    border-radius: 48rpx;
+}
+
+.page-address-list-add:active {
+    opacity: 0.8;
+}
+
+.default-class {
+    background-color: #38b8ff;
+    font-size: 26rpx;
+    color: #fff;
+    padding: 0 10rpx;
+    margin-right: 8rpx;
+    border-radius: 20rpx;
+    display: inline;
+    vertical-align: middle;
+}

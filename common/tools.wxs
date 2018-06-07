@@ -1,0 +1,81 @@
+var tools = {
+    cstr: function (s) {/*处理null、undefined或NaN字符串*/
+        if (s) {
+            return s.toString();
+        } else {
+            return '';
+        }
+    },
+    money: function (m, c, w) { /*m:金额;c:保留小数位数,只能取值0,1,2;w:1返回整个金额,2返回整数部分,3返回小数部分*/
+        if (c !== 0 && c !== 1 && c !== 2) {
+            console.log('传入保留小数位数参数错误');
+            return '';
+        }
+        if (w !== 1 && w !== 2 && w !== 3) {
+            console.log('传入返回类型参数错误');
+            return '';
+        }
+
+        if (0 === m) { /*由于0=false,需特殊处理*/
+            return deal('0', '');
+        } else {
+            if (!m || isNaN(m)) {
+                return '';
+            }
+            m = parseFloat(m).toFixed(2).toString();
+            if (-1 === m.indexOf('.')) {
+                return deal(m, '');
+            } else {
+                var s_arr = m.split('.');
+                return deal(s_arr[0], s_arr[1]);
+            }
+        }
+
+        function deal(p, f) { /*p为整数部分*/
+            if (0 === c) {
+                if (1 === w) {
+                    return p;
+                } else if (2 === w) {
+                    return p;
+                } else if (3 === w) {
+                    return '';
+                }
+            } else if (1 === c) {
+                if (0 === f.length) {
+                    f = '0';
+                } else if (f.length >= 2) {
+                    f = f.substring(0, 1);
+                }
+                if (1 === w) {
+                    return p + '.' + f;
+                } else if (2 === w) {
+                    return p;
+                } else if (3 === w) {
+                    return f;
+                }
+            } else if (2 === c) {
+                if (0 === f.length) {
+                    f = '00';
+                } else if (1 === f.length) {
+                    f = f + '0';
+                } else if (f.length >= 3) {
+                    f = f.substring(0, 2);
+                }
+                if (1 === w) {
+                    return p + '.' + f;
+                } else if (2 === w) {
+                    return p;
+                } else if (3 === w) {
+                    return f;
+                }
+            }
+        }
+    },
+    phone4hide: function (p) {/*将11位手机号中间4位隐藏*/
+        if (!p || p.toString().length != 11) {
+            return p;
+        }
+        return p.substring(0, 3) + '****' + p.substring(7, 12);
+    },
+};
+module.exports = tools;

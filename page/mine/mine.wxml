@@ -1,0 +1,40 @@
+<!--pages/mine/mine.wxml-->
+<view class='container'>
+  <!-- <view class='header'>
+    <image class='avatar' src='{{userInfo.avatarUrl}}'/>
+    <view class='nickname'>{{userInfo.nickName}}</view>
+  </view> -->
+
+  <view class="header">
+    <view class="user">
+      <image class="avatar" src="{{item.mainImage.url}}"></image>
+      <view class='info'>
+        <view class="nickname">昵称</view>
+        <view class="address">我的去币</view>
+      </view>
+    </view>
+    <image class='arrow' src='/img/toright.png'></image>
+  </view>
+
+  <view class="section">
+
+    <navigator url="../mine/activities" class="line judgement">
+      <view>我的闲置</view>
+    </navigator>
+    <navigator url="../mine/feedback" class="line judgement">
+      <view>我的收藏</view>
+    </navigator>
+    <navigator url="../mine/feedback" class="line judgement">
+      <view>我的家园</view>
+    </navigator>
+    <navigator url="../mine/feedback" class="line judgement">
+      <view>分享给朋友</view>
+    </navigator>
+    <navigator url="../mine/feedback" class="line judgement">
+      <view>关于我们</view>
+    </navigator>
+    <navigator url="../mine/feedback" class="line judgement">
+      <view>关注公众号</view>
+    </navigator>
+  </view>
+</view>

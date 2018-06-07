@@ -1,0 +1,54 @@
+page {
+    height: 100%;
+    background-color: #fff;
+}
+
+.page-paysuccess {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-top: 1rpx #ddd solid;
+}
+
+.page-paysuccess-wrapper {
+    width: 100%;
+    height: 104rpx;
+    margin-top: 132rpx;
+    text-align: center;
+}
+
+.page-paysuccess-wrapper-img {
+    width: 104rpx;
+    height: 104rpx;
+    margin-right: 24rpx;
+    vertical-align: top;
+}
+
+.page-paysuccess-wrapper-info {
+    display: inline-block;
+}
+
+.page-paysuccess-wrapper-info-a, .page-paysuccess-wrapper-info-b {
+    height: 30rpx;
+    text-align: left;
+}
+
+.page-paysuccess-wrapper-info-a {
+    margin: 13rpx 0 20rpx 0;
+}
+
+.page-paysuccess-wrapper-info-a-l, .page-paysuccess-wrapper-info-a-r,
+.page-paysuccess-wrapper-info-b-l, .page-paysuccess-wrapper-info-b-r {
+    color: #333;
+}
+
+.page-paysuccess-wrapper-info-a-m, .page-paysuccess-wrapper-info-b-m {
+    color: #38b8ff;
+}
+
+.common {
+    display: inline-block;
+    line-height: 30rpx;
+    font-size: 30rpx;
+    vertical-align: top;
+}

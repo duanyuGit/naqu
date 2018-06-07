@@ -1,0 +1,117 @@
+.view-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fff;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  
+}
+
+.view-publish-content {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.view-publish-content .view-desc {
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.view-publish-content .view-desc textarea {
+  font-size: 28rpx;
+  height: 250rpx;
+}
+
+.view-publish-content .view-tag {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.view-publish-content .view-location {
+  height: 96rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.view-publish-content .view-location {
+  height: 96rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.view-publish-content .view-location {
+  height: 96rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.view-publish-content .view-location .left {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.view-publish-content .view-location .left .img {
+  width: 45rpx;
+  height: 57rpx;
+}
+
+.view-publish-content .view-location .left .text {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 20rpx;
+  text-align: center;
+}
+
+.view-publish-content .view-location .right {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.view-publish-content .view-location .right .arrow {
+  width: 21rpx;
+  height: 42rpx;
+}
+
+.view-photo {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+}
+
+.view-photo .img-photo {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.view-separate {
+  height: 3rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  background: #cacaca;
+}
+.view-publish {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin-bottom:60rpx
+}

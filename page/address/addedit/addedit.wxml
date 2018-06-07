@@ -1,0 +1,94 @@
+<wxs src="../../../common/tools.wxs" module="tools" />
+<import src="../../../common/toast.wxml" />
+<template is="toast" data="{{isToastShow,toastContent}}" />
+
+<view class="page-addr-addedit">
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">收件人</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input placeholder-class="gray" placeholder="收件人姓名，2到15位字符" value='{{ addrInfo.name }}' bindinput="nameChange" />
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">手机号</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input placeholder-class="gray" placeholder="11位手机号" type="number" value='{{formatPhone?tools.phone4hide(addrInfo.phone_number):addrInfo.phone_number}}' maxlength="11" bindinput="phoneNumberChange" />
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="selectAreaTap">
+            <view class="weui-cell__hd">所在地区</view>
+            <view class="weui-cell__bd{{ (addrInfo.area&&addrInfo.area.length>0)?'':(' ' + 'hint') }}">{{ addrInfo.area || '请选择' }}</view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <view class="weui-label">详细地址</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input placeholder-class="gray" placeholder="5到60个字符" maxlength="60" value='{{ addrInfo.address }}' bindinput="addressChange" />
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">邮编</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input placeholder-class="gray" placeholder="可选填" type="number" value='{{ addrInfo.postcode }}' bindinput="postcodeChange" />
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <view class="weui-label">设为默认</view>
+            </view>
+            <view class="weui-cell__ft" bindtap="siwtchDefault">
+                <image class='page-address-default-img' src="{{addrInfo.default1==1 ?'/img/allright.png':'/img/circle.png' }}" />
+            </view>
+        </view>
+    </view>
+    <view class="addr-save" bindtap='saveAddrHandle'>保存</view>
+
+    <block wx:if="{{ isMaskShow }}">
+        <view class="mask" bindtap="hideAreaHandle"></view>
+    </block>
+
+    <block wx:if="{{ isAreaLayoutShow }}">
+        <view class="area-layout">
+            <view class="area-layout-top">
+                <view class="area-layout-top-l"></view>
+                <view class="area-layout-top-m">
+                    <text class="area-layout-top-m-t">{{ areaTitle }}</text>
+                </view>
+                <view class="area-layout-top-r" bindtap="hideAreaHandle">
+                    <image class="area-layout-top-r-img" src="/img/close.png" />
+                </view>
+            </view>
+            <view class="area-layout-container">
+                <block wx:if="{{ 'province'===showType }}">
+                    <view class="area-container">
+                        <block wx:for="{{ provinceArr }}" wx:key="{{ item.id }}">
+                            <view class="area-item" data-province-id="{{ item.id }}" data-province-name="{{ item.name }}" data-province-parent-id="{{ item.parentId }}" data-province-parent-name="{{ item.parentName }}" bindtap="provinceTap">{{ item.name }}</view>
+                        </block>
+                    </view>
+                </block>
+                <block wx:if="{{ 'city'===showType }}">
+                    <view class="area-container">
+                        <block wx:for="{{ cityArr }}" wx:key="{{ item.id }}">
+                            <view class="area-item" data-city-id="{{ item.id }}" data-city-name="{{ item.name }}" data-city-parent-id="{{ item.parentId }}" data-city-parent-name="{{ item.parentName }}" bindtap="cityTap">{{ item.name }}</view>
+                        </block>
+                    </view>
+                </block>
+                <block wx:if="{{ 'district'===showType }}">
+                    <view class="area-container">
+                        <block wx:for="{{ districtArr }}" wx:key="{{ item.id }}">
+                            <view class="area-item" data-district-id="{{ item.id }}" data-district-name="{{ item.name }}" data-district-parent-id="{{ item.parentId }}" data-district-parent-name="{{ item.parentName }}" bindtap="districtTap">{{ item.name }}</view>
+                        </block>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </block>
+</view>

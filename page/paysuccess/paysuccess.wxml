@@ -1,0 +1,21 @@
+<wxs src="../../common/tools.wxs" module="tools" />
+<import src="../../common/toast.wxml" />
+<template is="toast" data="{{isToastShow,toastContent}}" />
+
+<view class="page-paysuccess">
+    <view class="page-paysuccess-wrapper">
+        <image class="page-paysuccess-wrapper-img" mode="widthFix" src="/img/allright.png" />
+        <view class="page-paysuccess-wrapper-info">
+            <view class="page-paysuccess-wrapper-info-a">
+                <text class="page-paysuccess-wrapper-info-a-l common">成功支付，共</text>
+                <text class="page-paysuccess-wrapper-info-a-m common">{{ orderCount }}</text>
+                <text class="page-paysuccess-wrapper-info-a-r common">笔订单</text>
+            </view>
+            <view class="page-paysuccess-wrapper-info-b">
+                <text class="page-paysuccess-wrapper-info-b-l common">订单合计</text>
+                <text class="page-paysuccess-wrapper-info-b-m common">¥{{ tools.money(totalMoney,2,1) }}</text>
+                <text class="page-paysuccess-wrapper-info-b-r common">元</text>
+            </view>
+        </view>
+    </view>
+</view>
