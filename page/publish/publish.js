@@ -2,7 +2,9 @@
 
 const { upload_photo } = require('../../util/api.js');
 const net = require('../../util/net.js');
-const setting = require('../../util/setting_dialog.js');
+const scopeUtils = require('../../util/scope_utils.js');
+import WxValidate from '../../assets/plugins/wx-validate/WxValidate';
+const util = require('../../util/util.js');
 
 Page({
 
@@ -11,9 +13,12 @@ Page({
    */
   data: {
     photoPath: "",
-    //腾讯地图返回的地理位置信息
+    // 选中的地理位置信息
     locationResponse: "",
+    // 选中的地理位置名
     locationName: "",
+    //宝贝描述
+    desc:""
 
   },
 
@@ -21,7 +26,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.initValidate();
   },
 
   /**
@@ -73,6 +78,40 @@ Page({
 
   },
 
+  initValidate: function() {
+    let that = this;
+    // 验证字段的规则
+    const rules = {
+      photoPath: {
+        required: true,
+      },
+     
+      locationName: {
+        required: true,
+      },
+      
+      desc: {
+        required: true,
+      }
+    }
+    // 验证字段的提示信息，若不传则调用默认的信息
+    const messages = {
+      photoPath: {
+        required: '请添加照片',
+      },
+      locationName: {
+        required: '请描述下您的宝贝',
+      },
+      desc: {
+        required: '请选择你的位置',
+      },
+      
+    }
+    // 创建实例对象
+    this.WxValidate = new WxValidate(rules, messages)
+    
+  },
+
   /**
    * 添加照片
    */
@@ -108,7 +147,7 @@ Page({
    */
   addLocation: function() {
     let that = this;
-    setting.chooseLocation(() => {
+    scopeUtils.chooseLocation(() => {
       wx.chooseLocation({
         success: function (res) {
           console.log(res);
@@ -121,6 +160,19 @@ Page({
 
     });
   },
+
+/**
+ * 确认发布
+ */
+  confirm_publish:function(e) {
+    // 传入表单数据，调用验证方法
+    if (!this.WxValidate.checkForm(e)) {
+      const error = this.WxValidate.errorList[0]
+      util.toast(error.msg);
+      console.log(error.msg);
+      return false
+    }
+  }
 
 
 

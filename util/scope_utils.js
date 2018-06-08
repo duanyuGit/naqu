@@ -13,7 +13,7 @@ const SCOPE_TYPE = {
   CHOOSE_LOCATION: "scope.userLocation",
 }
 
-const setting_dialog = {
+const scope_utils = {
 
   /**
    * 如果未授权，显示去设置对话框,否则回调callback方法
@@ -49,7 +49,7 @@ const setting_dialog = {
    * @callback 如果已经授权，回调该方法
    */
   chooseAddress: (callback) => {
-    setting_dialog.showSettingDialog(SCOPE_TYPE.ADDRESS, "系统检测到您拒绝授权获取您的通讯地址信息，要通过授权后才能继续操作，是否前往设置打开授权", callback);
+    scope_utils.showSettingDialog(SCOPE_TYPE.ADDRESS, "系统检测到您拒绝授权获取您的通讯地址信息，要通过授权后才能继续操作，是否前往设置打开授权", callback);
   },
 
   /**
@@ -57,7 +57,7 @@ const setting_dialog = {
   * @callback 如果已经授权，回调该方法
   */
   getUserInfo: (callback) => {
-    setting_dialog.showSettingDialog(SCOPE_TYPE.USER_INFO, "系统检测到您拒绝授权获取您的用户信息，要通过授权后才能继续操作，是否前往设置打开授权", callback);
+    scope_utils.showSettingDialog(SCOPE_TYPE.USER_INFO, "系统检测到您拒绝授权获取您的用户信息，要通过授权后才能继续操作，是否前往设置打开授权", callback);
   },
 
   /**
@@ -65,7 +65,7 @@ const setting_dialog = {
    * @callback 如果已经授权，回调该方法
    */
   getLocation: (callback) => {
-    setting_dialog.showSettingDialog(SCOPE_TYPE.GET_LOCATION, "系统检测到您拒绝授权获取您的地理位置信息，要通过授权后才能继续操作，是否前往设置打开授权", callback);
+    scope_utils.showSettingDialog(SCOPE_TYPE.GET_LOCATION, "系统检测到您拒绝授权获取您的地理位置信息，要通过授权后才能继续操作，是否前往设置打开授权", callback);
   },
 
   /**
@@ -73,9 +73,9 @@ const setting_dialog = {
    * @callback 如果已经授权，回调该方法
    */
   chooseLocation: (callback) => {
-    setting_dialog.showSettingDialog(SCOPE_TYPE.CHOOSE_LOCATION, "系统检测到您拒绝授权获取您的地理位置信息，要通过授权后才能继续操作，是否前往设置打开授权", callback);
+    scope_utils.showSettingDialog(SCOPE_TYPE.CHOOSE_LOCATION, "系统检测到您拒绝授权获取您的地理位置信息，要通过授权后才能继续操作，是否前往设置打开授权", callback);
   },
 
 
 };
-module.exports = setting_dialog;
+module.exports = scope_utils;
