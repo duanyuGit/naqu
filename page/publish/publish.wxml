@@ -4,8 +4,14 @@
 
 <view class='view-content'>
   <view class='view-publish-content'>
-    <view class='view-photo'>
-      <image class='img-photo' src='/img/sh.png' />
+    <view class='view-photo' bindtap="addPhoto">
+
+      <block wx:if="{{photoPath && photoPath !== ''}}">
+        <image class='img-photo' src='{{photoPath}}' />
+      </block>
+      <block wx:else>
+        <image class='add-photo' src='/img/sh.png' />
+      </block>
     </view>
     <view class='view-separate' />
     <view class='view-desc'>
@@ -13,10 +19,15 @@
     </view>
     <view class='view-tag'>标签位置</view>
     <view class='view-separate' />
-    <view class='view-location'>
+    <view class='view-location' bindtap="addLocation">
       <view class='left'>
         <image class='img' src='/img/location.png' />
-        <text class='text'>添加地理位置</text>
+        <block wx:if="{{locationName && locationName !== ''}}">
+          <text class='text'>{{locationName}}</text>
+        </block>
+        <block wx:else>
+          <text class='text'>添加地理位置</text>
+        </block>
       </view>
       <view class='right'>
         <image class='arrow' src='/img/toright.png' />
@@ -24,5 +35,7 @@
     </view>
     <view class='view-separate' />
   </view>
-  <view class='view-publish'><text>确认发布</text></view>
+  <view class='view-publish'>
+    <text>确认发布</text>
+  </view>
 </view>

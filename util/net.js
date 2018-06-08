@@ -126,7 +126,7 @@ const net = {
       util.toast(`请设置请求url`);
       return;
     }
-    params.data = { ...params.data  };
+    params.data = { ...params.data };
     let user_id = '';
     let token = '';
     try {
@@ -221,6 +221,68 @@ const net = {
       }
     });
   },
+
+
+
+  /**
+   * 上传文件
+   * @params filePath 文件路径
+   * @params params formData参数
+   */
+  uploadPromise: function (filePath,params) {
+    if (!params) {
+      util.toast(`请设置请求参数`);
+      return;
+    }
+    if (!params.url) {
+      util.toast(`请设置请求url`);
+      return;
+    }
+    params.data = { ...params.data };
+    let user_id = '';
+    let token = '';
+    try {
+      user_id = params.data.user_id || wx.getStorageSync('login_userid');
+      token = wx.getStorageSync('login_token');
+    } catch (e) {
+      user_id = '';
+      token = '';
+      DEBUG && console.log(`getStorgaeSync() exception:${JSON.stringify(e)}`);
+    }
+    params.data.user_id = user_id;
+    params.data.token = token;
+    params.data.timestamp = (new Date()).valueOf();
+    params.data.command = this.getCommand(params.url);
+    params.data.sign = this.createSign(params.data);
+    Object.assign(params.data, this.commonParams, this.commonParamsSign);
+    let promise = new Promise(function (resolve, reject) {
+      wx.uploadFile({
+        url: params.url,
+        filePath: filePath,//要上传文件资源的路径
+        name: 'file', //文件对应的 key , 开发者在服务器端通过这个 key 可以获取到文件二进制内容
+        formData: params.data || '', //HTTP 请求中其他额外的 form data
+        success: res => {
+          if (res.statusCode == 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+
+        },
+        fail: error => {
+          reject(error);
+          DEBUG && console.log(`Request for ${params.url} fail.--->${JSON.stringify(e)}`);
+          util.toast(`${error.errMsg}`);
+        },
+        complete: res => {
+          DEBUG && console.log(`upload for ${params.url} complete.--->${JSON.stringify(res)}`);
+        }
+      })
+    });
+    return promise;
+  },
+
+
 
   /**
    * 请求绑定用户信息

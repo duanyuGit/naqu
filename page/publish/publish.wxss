@@ -97,6 +97,11 @@
   margin-bottom: 50rpx;
 }
 
+.view-photo .add-photo {
+  width: 160rpx;
+  height: 160rpx;
+}
+
 .view-photo .img-photo {
   width: 160rpx;
   height: 160rpx;

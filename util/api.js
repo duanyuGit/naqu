@@ -18,5 +18,6 @@ const apis = {
     get_district_for_address: `${api}/c2c/get_district_for_address`,
     pay_order: `${api}/c2c/pay_order`,
     send_pay_mini_msg: `${api}/c2c/send_pay_mini_msg`,
+    upload_photo: `${api}/c2c/upload_photo`,
 }
 module.exports = apis;
