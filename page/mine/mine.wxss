@@ -18,8 +18,8 @@
   width: 160rpx;
   height: 160rpx;
   border-radius: 50%;
-  border: 2px solid #fee767;
-   margin-left: 30rpx;
+  border: 1px solid #cacaca;
+  margin-left: 30rpx;
 }
 
 .header .user .info  {
@@ -37,7 +37,7 @@
   line-height: 46rpx;
 }
 
-.header .user .address {
+.header .user .userPoint {
     font-size: 26rpx;
     color: #999; 
 }
@@ -50,33 +50,11 @@
 }
 
 .section {
-  padding: 0;
   color: #2e2e2e;
   font-size: 30rpx;
+   margin-top: 30rpx;
 }
 
-/* .section .line {
-  margin-left: 30rpx;
-  padding-right: 30rpx;
-  line-height: 3;
-  border-bottom: 1px solid #efefef;
-} */
-
-/* .section .line:last-child {
-  border-bottom: none;
-}
-
-.section .line:before {
-  content: '>';
-  float: right;
-  color: #aaa;
-  margin-left: 20rpx;
-}
-
-.section .line .tl {
-  float: right;
-  color: #aaa;
-} */
 
 .section .row{
   width: 100%;
@@ -87,6 +65,7 @@
   align-items: center;
   line-height: 3;
   border-bottom: 1px solid #efefef;
+ 
 }
 
 .section .row .row-name{

@@ -1,24 +1,26 @@
-// pages/mine/mine.js
-
-const { get_user } = require('../../util/api.js');
-const util = require('../../util/util.js');
+// page/withdraw/withdraw.js
+const { with_draw } = require('../../util/api.js');
 const net = require('../../util/net.js');
-
-const app = getApp();
+const util = require('../../util/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:null,
+    coinAddress:"",
+    amount:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getUserInfo();
+    let user = wx.getStorageSync("user");
+    console.log("user=" + user.userWalletAddress);
+    this.setData({
+      coinAddress: user.userWalletAddress
+    });
   },
 
   /**
@@ -70,22 +72,38 @@ Page({
   
   },
 
-  getUserInfo: function () {
+  countChanged:function(e) {
+    let value = e.detail.value;
+    this.setData({
+      coinAddress:value
+    });
+  },
+
+  loadData: function () {
     let me = this;
     let params = {};
-    params.url = get_user;
-    net.reqPromise(params, true).then((res) => {
-      me.callbackSuccess(res);
+    params.url = with_draw;
+    params.data = {
+      amount: this.data.coinAddress
+    };
+    net.reqPromise(params, true).then((data) => {
+      console.log(data);
+      wx.navigateBack({
+        delta: 1
+      })
     }, (e) => {
       // me.callbackFail(e);
     });
   },
 
-  callbackSuccess: function (res) {
-    wx.setStorageSync("user", res.user);
-    this.setData({
-      userInfo: res.user
-    });
+  withdraw:function() {
+
+    if (this.data.coinAddress <= 0) {
+      util.toast("提取金额需要大于0");
+      return;
+    }
+    this.loadData();
+
   }
 
 

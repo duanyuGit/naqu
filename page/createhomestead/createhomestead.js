@@ -1,6 +1,6 @@
 // page/createhomestead/createhomestead.js
 const scopeUtils = require('../../util/scope_utils.js');
-const { publish_homestead, upload_photo } = require('../../util/api.js');
+const { publish_homestead } = require('../../util/api.js');
 const net = require('../../util/net.js');
 
 

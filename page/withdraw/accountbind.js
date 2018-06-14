@@ -1,24 +1,24 @@
-// pages/mine/mine.js
-
-const { get_user } = require('../../util/api.js');
-const util = require('../../util/util.js');
+const { bind_coin_address } = require('../../util/api.js');
 const net = require('../../util/net.js');
+const util = require('../../util/util.js');
 
-const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:null,
+    coinAddress:""
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getUserInfo();
+    console.log(options);
+  
   },
 
   /**
@@ -70,23 +70,36 @@ Page({
   
   },
 
-  getUserInfo: function () {
+  bind:function() {
+    if (!this.data.coinAddress || this.data.coinAddress === '') {
+      util.toast("请输入要绑定的钱包地址");
+      return;
+    }
+    this.loadData();
+
+  },
+
+  loadData: function () {
     let me = this;
     let params = {};
-    params.url = get_user;
+    params.url = bind_coin_address;
+    params.data = {
+      wallet: this.data.coinAddress
+    };
     net.reqPromise(params, true).then((res) => {
-      me.callbackSuccess(res);
+      let that = this;
+      console.log(res);
+      wx.redirectTo({
+        url: `./withdraw?coinAddress=${that.data.coinAddress}`,
+      })
     }, (e) => {
       // me.callbackFail(e);
     });
   },
 
-  callbackSuccess: function (res) {
-    wx.setStorageSync("user", res.user);
+  addressChanged:function(e) {
     this.setData({
-      userInfo: res.user
+      coinAddress: e.detail.value
     });
   }
-
-
 })

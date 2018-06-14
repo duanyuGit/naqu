@@ -7,10 +7,10 @@
 
   <view class="header">
     <view class="user">
-      <image class="avatar" src="{{item.mainImage.url}}"></image>
+      <image class="avatar" src="{{userInfo.userAvatarURL}}"></image>
       <view class='info'>
-        <view class="nickname">昵称</view>
-        <view class="address">我的去币</view>
+        <view class="nickname">{{userInfo.userName}}</view>
+        <view class="userPoint">{{userInfo.userPoint}}个积分，{{userInfo.userPoint}}个趣币</view>
       </view>
     </view>
     <image class='arrow' src='/img/toright.png'></image>
@@ -33,6 +33,19 @@
       <view class='row-name'>分享给朋友</view>
       <image class='arrow' src='/img/toright.png'></image>
     </navigator>
+    <block wx:if="{{ userInfo.userWalletAddress}}">
+      <navigator url="../withdraw/withdraw" class="row">
+        <view class='row-name'>趣币提取</view>
+        <image class='arrow' src='/img/toright.png'></image>
+      </navigator>
+    </block>
+     <block wx:else>
+      <navigator url="../withdraw/accountbind" class="row">
+        <view class='row-name'>趣币提取</view>
+        <image class='arrow' src='/img/toright.png'></image>
+      </navigator>
+    </block>
+
     <navigator url="../mine/feedback" class="row">
       <view class='row-name'>关于我们</view>
       <image class='arrow' src='/img/toright.png'></image>

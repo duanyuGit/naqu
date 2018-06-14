@@ -10,6 +10,9 @@ const apis = {
     get_communities: `${api}/c2c/get-communities`,//家园列表
     get_homestead: `${api}/c2c/community-articles`,//首页
     upload: `${api}/c2c/article`,//发布
+    get_user: `${api}/c2c/user`,//我的
+    with_draw: `${api}/c2c/user-token-draw`,//提取
+    bind_coin_address: `${api}/c2c/user-complete-info`,//绑定地址
     get_product_by_id: `${api}/c2c/get_product_by_id`,
     buy_product: `${api}/c2c/buy_product`,
     confirm_order: `${api}/c2c/confirm_order`,

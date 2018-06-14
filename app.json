@@ -10,7 +10,9 @@
     "page/publish/publish",
     "page/mine/mine",
     "page/homestead/homestead",
-    "page/createhomestead/createhomestead"
+    "page/createhomestead/createhomestead",
+    "page/withdraw/accountbind",
+    "page/withdraw/withdraw"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

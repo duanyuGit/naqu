@@ -1,0 +1,6 @@
+<!--page/withdraw/accountbind.wxml-->
+<view>
+  <view>链克地址</view>
+<input placeholder-class="gray" type='digit' placeholder='输入提取的链克数量' bindinput='countChanged' />
+  <button type="primary" bindtap="withdraw">提取</button>
+</view>

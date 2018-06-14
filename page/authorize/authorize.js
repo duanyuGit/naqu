@@ -73,6 +73,7 @@ Page({
           net.reqPromise(params).then((res) => {
             wx.setStorageSync('login_userid', res.user.oId);
             wx.setStorageSync('login_token', res.token);
+            wx.setStorageSync("user", res.user);
             that.goToIndex();
            
           });

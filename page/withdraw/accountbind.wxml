@@ -1,0 +1,5 @@
+<!--page/withdraw/accountbind.wxml-->
+<view>
+  <textarea placeholder-class="gray" placeholder='输入链克地址' bindinput='addressChanged' />
+  <button type="primary" bindtap="bind">绑定</button>
+</view>
