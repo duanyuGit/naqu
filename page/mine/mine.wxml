@@ -17,24 +17,29 @@
   </view>
 
   <view class="section">
-
-    <navigator url="../mine/activities" class="line judgement">
-      <view>我的闲置</view>
+    <navigator url="../mine/activities" class="row">
+      <view class='row-name'>我的闲置</view>
+      <image class='arrow' src='/img/toright.png'></image>
     </navigator>
-    <navigator url="../mine/feedback" class="line judgement">
-      <view>我的收藏</view>
+    <navigator url="../mine/feedback" class="row">
+      <view class='row-name'>我的收藏</view>
+      <image class='arrow' src='/img/toright.png'></image>
     </navigator>
-    <navigator url="../mine/feedback" class="line judgement">
-      <view>我的家园</view>
+    <navigator url="../mine/feedback" class="row">
+      <view class='row-name'>我的家园</view>
+      <image class='arrow' src='/img/toright.png'></image>
     </navigator>
-    <navigator url="../mine/feedback" class="line judgement">
-      <view>分享给朋友</view>
+    <navigator url="../mine/feedback" class="row">
+      <view class='row-name'>分享给朋友</view>
+      <image class='arrow' src='/img/toright.png'></image>
     </navigator>
-    <navigator url="../mine/feedback" class="line judgement">
-      <view>关于我们</view>
+    <navigator url="../mine/feedback" class="row">
+      <view class='row-name'>关于我们</view>
+      <image class='arrow' src='/img/toright.png'></image>
     </navigator>
-    <navigator url="../mine/feedback" class="line judgement">
-      <view>关注公众号</view>
+    <navigator url="../mine/feedback" class="row">
+      <view class='row-name'>关注公众号</view>
+      <image class='arrow' src='/img/toright.png'></image>
     </navigator>
   </view>
 </view>

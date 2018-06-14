@@ -152,9 +152,9 @@ const net = {
         dataType: params.dataType || 'json',
         success: function (res) {
           let data = res.data;
-          if (0 === data.errorCode) {//ok
+          if (0 === data.code) {//ok
             resolve(res.data);
-          } else if (CODE_NOT_LOGIN === data.errorCode) {//未登录
+          } else if (CODE_NOT_LOGIN === data.code) {//未登录
             DEBUG && console.log(`Request for ${params.url} exception.--->${JSON.stringify(data.serverMsg)}`);
             wx.clearStorage();
             util.toast(`您的用户信息已失效，请重新操作`, 2000, () => {
@@ -261,11 +261,12 @@ const net = {
         filePath: filePath,//要上传文件资源的路径
         name: 'file', //文件对应的 key , 开发者在服务器端通过这个 key 可以获取到文件二进制内容
         formData: params.data || '', //HTTP 请求中其他额外的 form data
+        header: { "Content-Type": "multipart/form-data" },
         success: res => {
           if (res.statusCode == 200) {
-            resolve(res.data);
+            resolve(JSON.parse(res.data));
           } else {
-            reject(res);
+            reject(JSON.parse(res.data));
           }
 
         },

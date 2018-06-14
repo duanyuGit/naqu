@@ -16,18 +16,18 @@
       </view>
       <view class='view-separate' />
       <view class='view-desc'>
-        <textarea placeholder-class="gray" placeholder="描述下你的宝贝，说个故事也成～" bindinput="nameChange" confirm-type="send" />
+        <textarea placeholder-class="gray" placeholder="描述下你的宝贝，说个故事也成～" bindinput="nameChanged" confirm-type="send" />
       </view>
       <view class='view-tag'>标签位置</view>
       <view class='view-separate' />
       <view class='view-location' bindtap="addLocation">
         <view class='left'>
           <image class='img' src='/img/location.png' />
-          <block wx:if="{{locationName && locationName !== ''}}">
-            <text class='text'>{{locationName}}</text>
+          <block wx:if="{{homesteadName && homesteadName !== ''}}">
+            <text class='text'>{{homesteadName}}</text>
           </block>
           <block wx:else>
-            <text class='text'>添加地理位置</text>
+            <text class='text'>添加家园</text>
           </block>
         </view>
         <view class='right'>

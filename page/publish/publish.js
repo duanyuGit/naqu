@@ -1,6 +1,6 @@
 // page/publish/publish.js
 
-const { upload_photo } = require('../../util/api.js');
+const { upload_photo, upload } = require('../../util/api.js');
 const net = require('../../util/net.js');
 const scopeUtils = require('../../util/scope_utils.js');
 import WxValidate from '../../assets/plugins/wx-validate/WxValidate';
@@ -15,8 +15,10 @@ Page({
     photoPath: "",
     // 选中的地理位置信息
     locationResponse: "",
-    // 选中的地理位置名
-    locationName: "",
+    homestead:null,
+    // 选中的家园名称
+    homesteadName: "",
+    imageUrl:"",
     //宝贝描述
     desc:""
 
@@ -26,6 +28,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let homestead = wx.getStorageSync("homestead");
+    this.setData({
+      homestead: homestead,
+      homesteadName: homestead.commuity_name,
+    });
     this.initValidate();
   },
 
@@ -86,7 +93,7 @@ Page({
         required: true,
       },
      
-      locationName: {
+      homesteadName: {
         required: true,
       },
       
@@ -99,11 +106,11 @@ Page({
       photoPath: {
         required: '请添加照片',
       },
-      locationName: {
-        required: '请描述下您的宝贝',
+      homesteadName: {
+        required: '请选择家园',
       },
       desc: {
-        required: '请选择你的位置',
+        required: '请描述下您的宝贝',
       },
       
     }
@@ -137,28 +144,35 @@ Page({
    */
   uploadPhoto: function (filePath) {
     let params = {};
+    let that = this;
+    let key = [];
     params.url = upload_photo;
     net.uploadPromise(filePath, params).then((res) => {
       console.log(res);
+      key = res.key;
+      that.setData({
+        imageUrl: key[0],
+      });
     });
   },
+
   /**
    * 添加地理位置
    */
   addLocation: function() {
-    let that = this;
-    scopeUtils.chooseLocation(() => {
-      wx.chooseLocation({
-        success: function (res) {
-          console.log(res);
-          that.setData({
-            locationResponse: res,
-            locationName: res.name
-          });
-        }
-      })
+    // let that = this;
+    // scopeUtils.chooseLocation(() => {
+    //   wx.chooseLocation({
+    //     success: function (res) {
+    //       console.log(res);
+    //       that.setData({
+    //         locationResponse: res,
+    //         homesteadName: res.name
+    //       });
+    //     }
+    //   })
 
-    });
+    // });
   },
 
 /**
@@ -166,12 +180,56 @@ Page({
  */
   confirm_publish:function(e) {
     // 传入表单数据，调用验证方法
-    if (!this.WxValidate.checkForm(e)) {
-      const error = this.WxValidate.errorList[0]
-      util.toast(error.msg);
-      console.log(error.msg);
-      return false
+    // if (!this.WxValidate.checkForm(e)) {
+    //   const error = this.WxValidate.errorList[0]
+    //   util.toast(error.msg);
+    //   console.log(error.msg);
+    //   return false
+    // }
+    if (!this.data.imageUrl) {
+      util.toast("请添加图片");
+      return;
     }
+    if(!this.data.desc) {
+      util.toast("请添加描述");
+      return;
+    }
+
+    this.publish();
+
+  },
+
+
+  publish: function () {
+    let me = this;
+    let params = {};
+    params.url = upload;
+    params.data = {
+      articleTitle: this.data.homesteadName + "_" + new Date().getTime(),
+      articleTags:this.data.desc,
+      articleContent: this.data.imageUrl,
+      communityId: this.data.homestead.oId
+
+    };
+    net.reqPromise(params, true).then((data) => {
+      me.callbackSuccess(data);
+    }, (e) => {
+      // me.callbackFail(e);
+    });
+  },
+
+  nameChanged: function (e) {
+    this.setData({
+      desc: e.detail.value
+    })
+  },
+
+  callbackSuccess: function (data) {
+    this.setData({
+      imageUrl:"",
+      photoPath:"",
+      desc:""
+    });
   }
 
 

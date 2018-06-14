@@ -1,0 +1,62 @@
+.homestead .head {
+  width: 100%;
+  padding: 0rpx 0rpx 0rpx 30rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homestead .head .user {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.homestead .head .user .avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  margin-bottom:20rpx; 
+}
+
+.homestead .head .user .user-info {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+   justify-content: center; 
+}
+
+.homestead .head .user .nickname {
+  font-size: 32rpx;
+  color: #000;
+}
+
+.homestead .head .user .address {
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 30rpx;
+}
+
+
+.mage-page {
+ display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fff;
+  justify-content: space-between;
+  position: absolute;
+  
+}
+
+.mage-page .create {
+   display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin-top: 60rpx;
+  margin-bottom:60rpx;
+  
+}
+

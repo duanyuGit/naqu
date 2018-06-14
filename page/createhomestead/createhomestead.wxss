@@ -1,0 +1,48 @@
+.mage-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fff;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.mage-page .create {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 60rpx;
+}
+
+.view-location .left .img {
+  width: 45rpx;
+  height: 57rpx;
+}
+
+.view-photo {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+}
+
+.view-photo .add-photo {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.view-photo .img-photo {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.view-separate {
+  height: 3rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  background: #cacaca;
+}

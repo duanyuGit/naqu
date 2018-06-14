@@ -2,21 +2,21 @@
 <template is="toast" data="{{isToastShow,toastContent}}" />
 
 <template name="feed">
-  <view class="product" data-product-id="{{item.id}}" bindtap="goDetail">
+  <view class="product" data-product-id="{{item.oId}}" bindtap="goDetail">
   <!-- 头部 用户及时间区域 -->
     <view class="head">
       <view class="user">
-        <image class="avatar" src="{{item.mainImage.url}}"></image>
+        <image class="avatar" src="{{item.articleAuthorThumbnailURL48}}"></image>
         <view class='user-info'>
-          <view class="nickname">昵称</view>
-          <view class="address">地址</view>
+          <view class="nickname">{{item.articleAuthorName}}</view>
+          <view class="address">{{item.articleCity}}</view>
         </view>
       </view>
-      <view class="time">2018.6.6 11:52</view>
+      <view class="time">{{item.timeAgo}}</view>
     </view>
     <!-- 内容区域 -->
-    <image class="img" src="{{item.mainImage.url}}"></image>
-    <view class="title-main twoline">{{item.name}}</view>
+    <image class="img" src="{{item.articleContent}}"></image>
+    <view class="title-main twoline">{{item.articleTags}}</view>
     <!-- <view class="title-sub singleline">{{item.desc}}</view> -->
     <view class="info">
        <view class="left"> 
@@ -44,7 +44,7 @@
       </swiper-item>
     </swiper>
   </view>
-  <block wx:for="{{goodList}}" wx:key="{{item.id}}">
+  <block wx:for="{{latestArticles}}" wx:key="{{item.id}}">
     <template is="feed" data="{{item,imgUrls}}" />
   </block>
 </view>

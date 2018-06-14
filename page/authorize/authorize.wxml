@@ -1,0 +1,20 @@
+<!--start.wxml-->
+<view class="container">
+ 
+    <image class="title" src="/img/more/title8.png"></image>
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <image class="logo" src="{{userInfo.avatarUrl}}"></image>
+        <image class="wave" src="/img/more/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/img/more/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+         <image class="smalltitle" src="/img/more/confirm-word1.png"></image>
+        <!-- <view class="confirm-btn" bindtap='goToIndex'>
+          <text >微信授权绑定</text>
+        </view> -->
+         <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="confirm-btn">微信授权绑定</button>
+       
+      </view>
+    </view>
+</view>

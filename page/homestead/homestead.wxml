@@ -1,0 +1,25 @@
+<import src="../../common/toast.wxml" />
+<template is="toast" data="{{isToastShow,toastContent}}" />
+
+ <template name="homestead">
+  <view class="homestead" data-homestead="{{item}}" bindtap="chooseHomestead">
+
+    <view class="head">
+      <view class="user">
+        <view class='user-info'>
+          <view class="nickname">{{item.commuity_name}}</view>
+          <view class="address">{{item.address}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template> 
+
+<view class="mage-page">
+   <block wx:for="{{homesteadList}}" wx:key="{{item.id}}">
+    <template is="homestead" data="{{item}}" />
+  </block> 
+  <view class='create'>
+      <button type="primary" bindtap="create">创建</button>
+    </view>
+</view>

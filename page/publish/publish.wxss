@@ -67,8 +67,8 @@
 }
 
 .view-publish-content .view-location .left .img {
-  width: 45rpx;
-  height: 57rpx;
+  width: 54rpx;
+  height: 71rpx;
 }
 
 .view-publish-content .view-location .left .text {
@@ -98,8 +98,8 @@
 }
 
 .view-photo .add-photo {
-  width: 160rpx;
-  height: 160rpx;
+  width: 75rpx;
+  height: 62rpx;
 }
 
 .view-photo .img-photo {

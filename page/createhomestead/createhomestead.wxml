@@ -1,0 +1,30 @@
+<!--page/createhomestead/createhomestead.wxml-->
+<view class='main-page'>
+  <view class='view-photo' bindtap="addPhoto">
+
+    <block wx:if="{{photoPath && photoPath !== ''}}">
+      <image class='img-photo' src='{{photoPath}}' />
+    </block>
+    <block wx:else>
+      <image class='add-photo' src='/img/sh.png' />
+    </block>
+  </view>
+<view class='view-separate' />
+  <input placeholder-class="gray" placeholder='家园名称' bindinput='nameChanged' />
+  <view class='view-location' bindtap="addLocation">
+    <view class='left'>
+      <text class='text'>家园定位</text>
+      <image class='img' src='/img/location.png' />
+      <block wx:if="{{locationAddress && locationAddress !== ''}}">
+        <text class='text'>{{locationAddress}}</text>
+      </block>
+      <block wx:else>
+        <text class='text'>选择位置</text>
+      </block>
+    </view>
+  </view>
+  <textarea placeholder-class="gray" placeholder="家园描述" bindinput='descChanged' />
+  <view class='create'>
+    <button type="primary" bindtap="create">创建</button>
+  </view>
+</view>
