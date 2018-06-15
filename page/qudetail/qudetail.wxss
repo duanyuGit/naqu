@@ -1,0 +1,159 @@
+page {
+  font-family: PingFangSC-Light;
+}
+
+.slide swiper {
+  height: 330rpx;
+}
+
+.slide swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+.product {
+  width: 100%;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+
+.product .head {
+  width: 100%;
+  padding: 0rpx 0rpx 0rpx 30rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product .head .user {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.product .head .user .avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  margin-bottom:20rpx; 
+}
+
+.product .head .user .user-info {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+   justify-content: center; 
+}
+
+.product .head .user .nickname {
+  font-size: 32rpx;
+  color: #000;
+}
+
+.product .head .user .address {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.product .head .time {
+  font-size: 26rpx;
+  color: #999;
+  margin-right: 60rpx;
+}
+
+.product:first-child {
+  border-top: 1rpx #f5f5f5 solid;
+}
+
+.product:active {
+  opacity: 0.9;
+}
+
+.product .img {
+  width: 100%;
+  height: 600rpx;
+  vertical-align: bottom;
+}
+
+.product .title-main {
+  padding: 26rpx 30rpx 5rpx 30rpx;
+  font-size: 32rpx;
+  color: #000;
+  line-height: 46rpx;
+}
+
+.product .title-sub {
+  padding: 3rpx 30rpx 10rpx 30rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.product .info {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 10rpx 0 20rpx 0;
+  margin-top: 30rpx;
+}
+
+.product .info .left {
+  margin-left: 25rpx;
+}
+
+.product .info .left .like-users-avatar {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+  margin-left: 5rpx;
+}
+
+.product .info .left .text {
+  display: inline-block;
+  margin: 20rpx 8rpx 6rpx 30rpx;
+  padding: 0 6rpx;
+  color: #38b8ff;
+  font-size: 26rpx;
+  border: 1px solid #38b8ff;
+  border-radius: 10rpx;
+  vertical-align: top;
+  line-height: 35rpx;
+}
+
+.product .info .left .price {
+  display: inline-block;
+  margin-top: 12rpx;
+  font-size: 36rpx;
+  color: #000;
+  letter-spacing: 0;
+}
+
+.product .info .right {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.product .info .right .vote-view {
+  margin-right: 30rpx;
+}
+
+.product .info .right .forward-view {
+  margin-right: 30rpx;
+}
+
+.product .info .right image {
+  width: 52rpx;
+  height: 44rpx;
+}
+
+button {
+  padding: 0;
+  line-height: 0;
+}
+
+
+button[plain] {
+  border: none;
+}

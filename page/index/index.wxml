@@ -3,7 +3,7 @@
 
 <template name="feed">
   <view class="product" data-product-id="{{item.oId}}" bindtap="goDetail">
-  <!-- 头部 用户及时间区域 -->
+    <!-- 头部 用户及时间区域 -->
     <view class="head">
       <view class="user">
         <image class="avatar" src="{{item.articleAuthorThumbnailURL48}}"></image>
@@ -19,19 +19,21 @@
     <view class="title-main twoline">{{item.articleTags}}</view>
     <!-- <view class="title-sub singleline">{{item.desc}}</view> -->
     <view class="info">
-       <view class="left"> 
-          <block wx:for="{{imgUrls}}" wx:key="id" wx:for-item="itemName"> 
-              <image class="like-users-avatar" src="{{itemName}}"></image> 
-          </block> 
-       </view> 
-       <view class="right">
-       <view class="vote-view" bindtap="vote">
-            <image class="vote-img" src="/img/btn-vote.png"></image>
+      <view class="left">
+        <block wx:for="{{imgUrls}}" wx:key="id" wx:for-item="itemName">
+          <image class="like-users-avatar" src="{{itemName}}"></image>
+        </block>
+      </view>
+      <view class="right">
+        <view class="vote-view" catchtap="vote">
+          <image class="vote-img" src="/img/btn-vote.png"></image>
         </view>
-        <view class="forward-view" bindtap="forward">
+        <view class="forward-view">
+          <button class="btn-style" open-type='share' plain='true' hover-stop-propagation='true'>
             <image class="forward-img" src="/img/btn_feed_forward_normal.png"></image>
+          </button>
         </view>
-      </view> 
+      </view>
     </view>
   </view>
 </template>

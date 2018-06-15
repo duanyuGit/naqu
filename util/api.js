@@ -13,6 +13,7 @@ const apis = {
     get_user: `${api}/c2c/user`,//我的
     with_draw: `${api}/c2c/user-token-draw`,//提取
     bind_coin_address: `${api}/c2c/user-complete-info`,//绑定地址
+    get_detail: `${api}/c2c/get-article`,//详情
     get_product_by_id: `${api}/c2c/get_product_by_id`,
     buy_product: `${api}/c2c/buy_product`,
     confirm_order: `${api}/c2c/confirm_order`,

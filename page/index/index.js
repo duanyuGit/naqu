@@ -15,7 +15,8 @@ Page({
     page: 1,
     count: 20,
     hasMore: true,
-    community_id: ""
+    community_id: "",
+    item:null
   },
   onLoad: function (options) {
     let community = wx.getStorageSync("homestead");
@@ -25,6 +26,13 @@ Page({
   },
   
   onShow:function() {
+    let user = wx.getStorageSync("user");
+    if(!user) {
+      wx.redirectTo({
+        url: 'page/authorize/authorize',
+      })
+      return;
+    }
     this.loadData();
   },
 
@@ -110,7 +118,33 @@ Page({
   goDetail: function (e) {//商品点击进详情
     let productId = e.currentTarget.dataset.productId;
     wx.navigateTo({
-      url: `../product/product?product_id=${productId}`,
+      url: `../qudetail/qudetail?detail_id=${productId}`,
     });
   },
+
+  /**
+    * 用户点击右上角分享
+    */
+  onShareAppMessage: function () {
+    return {
+      title: `${this.data.item.articleTags || '趣详情'}`,
+      path: `page/qudetail/qudetail?detail_id=${this.data.item.oId}`
+    };
+  },
+
+  // forward: function (e) {
+  //   let item = e.currentTarget.dataset.item;
+  //   this.setData({
+  //     item:item
+  //   });
+  //   this.onShareAppMessage();
+  //   console.log("forward");
+  //   return;
+  // },
+
+  vote: function (e) {
+   console.log("vote=dfsfsadfsd");
+   return;
+  },
+
 });

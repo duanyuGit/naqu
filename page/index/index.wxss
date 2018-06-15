@@ -37,14 +37,14 @@ page {
   height: 100rpx;
   border-radius: 10rpx;
   margin-top: 20rpx;
-  margin-bottom:20rpx; 
+  margin-bottom: 20rpx;
 }
 
 .product .head .user .user-info {
   margin-left: 20rpx;
   display: flex;
   flex-direction: column;
-   justify-content: center; 
+  justify-content: center;
 }
 
 .product .head .user .nickname {
@@ -146,4 +146,14 @@ page {
 .product .info .right image {
   width: 52rpx;
   height: 44rpx;
+}
+
+button {
+  padding: 0;
+  line-height: 0;
+}
+
+
+button[plain] {
+  border: none;
 }

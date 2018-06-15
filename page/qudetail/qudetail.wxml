@@ -1,0 +1,34 @@
+<view class="product">
+  <!-- 头部 用户及时间区域 -->
+  <view class="head">
+    <view class="user">
+      <image class="avatar" src="{{item.articleAuthorThumbnailURL48}}"></image>
+      <view class='user-info'>
+        <view class="nickname">{{item.articleAuthorName}}</view>
+        <view class="address">{{item.articleCity}}</view>
+      </view>
+    </view>
+    <view class="time">{{item.timeAgo}}</view>
+  </view>
+  <!-- 内容区域 -->
+  <image class="img" src="{{item.articleContent}}"></image>
+  <view class="title-main twoline">{{item.articleTags}}</view>
+  <!-- <view class="title-sub singleline">{{item.desc}}</view> -->
+  <view class="info">
+    <view class="left">
+      <block wx:for="{{imgUrls}}" wx:key="id" wx:for-item="itemName">
+        <image class="like-users-avatar" src="{{itemName}}"></image>
+      </block>
+    </view>
+    <view class="right">
+      <view class="vote-view" bindtap="vote">
+        <image class="vote-img" src="/img/btn-vote.png"></image>
+      </view>
+      <view class="forward-view">
+          <button class="btn-style" open-type='share' plain='true'>
+            <image class="forward-img" src="/img/btn_feed_forward_normal.png"></image>
+          </button>
+        </view>
+    </view>
+  </view>
+</view>

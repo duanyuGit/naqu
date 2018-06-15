@@ -13,7 +13,8 @@
     "page/createhomestead/createhomestead",
     "page/withdraw/accountbind",
     "page/withdraw/withdraw",
-    "page/withdraw/myaccount"
+    "page/withdraw/myaccount",
+    "page/qudetail/qudetail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -25,6 +26,8 @@
     "onReachBottomDistance": 50
   },
   "tabBar": {
+    "color": "#999",
+    "selectedColor": "#000",
     "list": [
       {
         "pagePath": "page/index/index",
