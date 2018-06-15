@@ -12,12 +12,13 @@
     "page/homestead/homestead",
     "page/createhomestead/createhomestead",
     "page/withdraw/accountbind",
-    "page/withdraw/withdraw"
+    "page/withdraw/withdraw",
+    "page/withdraw/myaccount"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "拿去",
+    "navigationBarTitleText": "拿趣",
     "backgroundColor": "#fff",
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": false,

@@ -1,6 +1,18 @@
 <!--page/withdraw/accountbind.wxml-->
+
 <view>
-  <view>链克地址</view>
-<input placeholder-class="gray" type='digit' placeholder='输入提取的链克数量' bindinput='countChanged' />
-  <button type="primary" bindtap="withdraw">提取</button>
+  <view class='withdraw-content'>
+
+    <view class='address-tip'>链克账户地址</view>
+
+    <view class='address'>{{coinAddress}}</view>
+
+    <text class='amount-tip'>链克数量</text>
+
+    <input placeholder-style='amount' placeholder-class='amount' type='digit' placeholder='输入提取额度' bindinput='countChanged' />
+  </view>
+  <view class='withdraw'>
+    <text class="common-btn-style" bindtap="withdraw">确认</text>
+  </view>
+
 </view>

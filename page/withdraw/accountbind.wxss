@@ -1,1 +1,33 @@
 /* page/withdraw/accountbind.wxss */
+
+.arrow {
+  width: 21rpx;
+  height: 42rpx;
+  margin-right: 30rpx;
+}
+
+.address-tip {
+  font-size: 32rpx;
+  color: #000;
+}
+
+.address {
+  font-size: 32rpx;
+  color: #ddd;
+}
+
+.withdraw {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-top: 100rpx;
+}
+
+.withdraw-content {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 30rpx 30rpx 30rpx;
+  border: 1px solid #ddd;
+  border-radius: 10rpx;
+  margin: 30rpx 50rpx 30rpx 50rpx;
+}

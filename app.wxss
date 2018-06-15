@@ -54,3 +54,11 @@ radio {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
+
+.common-btn-style {
+  font-size: 32rpx;
+  color: #0ff;
+  border-radius: 100rpx;
+  border: 3rpx solid #0ff;
+  padding: 20rpx 150rpx 20rpx 150rpx;
+}

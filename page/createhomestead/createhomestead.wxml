@@ -9,22 +9,33 @@
       <image class='add-photo' src='/img/sh.png' />
     </block>
   </view>
-<view class='view-separate' />
-  <input placeholder-class="gray" placeholder='家园名称' bindinput='nameChanged' />
-  <view class='view-location' bindtap="addLocation">
-    <view class='left'>
-      <text class='text'>家园定位</text>
-      <image class='img' src='/img/location.png' />
-      <block wx:if="{{locationAddress && locationAddress !== ''}}">
-        <text class='text'>{{locationAddress}}</text>
-      </block>
-      <block wx:else>
-        <text class='text'>选择位置</text>
-      </block>
+  <view class='view-separate' />
+
+  <view class='content'>
+    <view class='content-name'>
+      <view class='name'>趣吧名</view>
+      <input placeholder-class="gray" placeholder='请输入趣吧名称' bindinput='nameChanged' />
     </view>
+
+    <view class='view-location' bindtap="addLocation">
+      <view class='left'>
+        <text class='text'>趣吧定位</text>
+        <image class='img' src='/img/location.png' />
+        <block wx:if="{{locationAddress && locationAddress !== ''}}">
+          <text class='text'>{{locationAddress}}</text>
+        </block>
+        <block wx:else>
+          <text class='text'>选择位置</text>
+        </block>
+      </view>
+    </view>
+    <view class='content-desc'>
+      <view>趣吧描述</view>
+      <textarea class='desc' placeholder-class="gray" placeholder="多介绍下趣吧，这样才会有更多的人加入哦" bindinput='descChanged' />
+    </view>
+    
   </view>
-  <textarea placeholder-class="gray" placeholder="家园描述" bindinput='descChanged' />
   <view class='create'>
-    <button type="primary" bindtap="create">创建</button>
+    <view class="common-btn-style" bindtap="create">创建</view>
   </view>
 </view>

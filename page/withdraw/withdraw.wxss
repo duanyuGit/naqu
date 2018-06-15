@@ -1,1 +1,38 @@
-/* page/withdraw/withdraw.wxss */
+.withdraw-content {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 30rpx 30rpx 30rpx;
+  border: 1px solid #ddd;
+  border-radius: 10rpx;
+  margin: 30rpx 50rpx 30rpx 50rpx;
+}
+
+.address-tip {
+  font-size: 32rpx;
+  color: #000;
+}
+
+.address { 
+  font-size: 32rpx;
+  color: #000;
+  white-space: pre-line;
+  word-break: break-all;
+}
+
+.amount-tip {
+  font-size: 32rpx;
+  color: #000;
+  margin-top: 50rpx;
+}
+
+.amount {
+  font-size: 32rpx;
+  color: #ddd;
+}
+
+.withdraw {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-top: 100rpx;
+}

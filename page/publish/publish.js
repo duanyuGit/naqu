@@ -230,6 +230,10 @@ Page({
       photoPath:"",
       desc:""
     });
+    wx.switchTab({
+      url: `../index/index`,
+    });
+    
   }
 
 

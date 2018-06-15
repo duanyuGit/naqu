@@ -20,6 +20,6 @@
     <template is="homestead" data="{{item}}" />
   </block> 
   <view class='create'>
-      <button type="primary" bindtap="create">创建</button>
+      <view class="common-btn-style" bindtap="create">创建</view>
     </view>
 </view>

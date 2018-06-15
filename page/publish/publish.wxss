@@ -67,8 +67,8 @@
 }
 
 .view-publish-content .view-location .left .img {
-  width: 54rpx;
-  height: 71rpx;
+  width: 32rpx;
+  height: 42rpx;
 }
 
 .view-publish-content .view-location .left .text {
@@ -111,7 +111,7 @@
   height: 3rpx;
   margin-left: 20rpx;
   margin-right: 20rpx;
-  background: #cacaca;
+  background: #ddd;
 }
 .view-publish {
   display: flex;

@@ -1,6 +1,6 @@
 <import src="../../common/toast.wxml" />
 <template is="toast" data="{{isToastShow,toastContent}}" />
-<form bindsubmit="confirm_publish">
+<view>
 
 
   <view class='view-content'>
@@ -16,9 +16,9 @@
       </view>
       <view class='view-separate' />
       <view class='view-desc'>
-        <textarea placeholder-class="gray" placeholder="描述下你的宝贝，说个故事也成～" bindinput="nameChanged" confirm-type="send" />
+        <textarea placeholder-class="gray" placeholder="描述下你的宝贝，说个故事也成～" bindinput="nameChanged" confirm-type="send" value='{{desc}}' />
       </view>
-      <view class='view-tag'>标签位置</view>
+      <!-- <view class='view-tag'>标签位置</view> -->
       <view class='view-separate' />
       <view class='view-location' bindtap="addLocation">
         <view class='left'>
@@ -38,8 +38,8 @@
     </view>
     <view class='view-publish'>
      
-      <button type="primary" class="apply-btn" formType="submit" >确认发布</button>
+      <view class="common-btn-style" bindtap='confirm_publish' >确认发布</view>
     </view>
 
   </view>
-</form>
+</view>

@@ -1,0 +1,39 @@
+/* page/withdraw/myaccount.wxss */
+
+.arrow {
+  width: 21rpx;
+  height: 42rpx;
+  margin-right: 30rpx;
+}
+
+.token-amount-tip {
+  font-size: 24rpx;
+  color: #000;
+  margin-left: 32rpx;
+}
+
+.token-amount {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.token-amount .text {
+  font-size: 68rpx;
+  color: #000;
+}
+
+.withdraw {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100rpx;
+}
+
+.unit {
+  font-size: 24rpx;
+  color: #000;
+}

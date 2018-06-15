@@ -17,9 +17,24 @@
   margin-bottom: 60rpx;
 }
 
+.view-location {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+}
+
+.view-location .left {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
 .view-location .left .img {
   width: 45rpx;
   height: 57rpx;
+  margin-left: 24rpx;
 }
 
 .view-photo {
@@ -31,8 +46,8 @@
 }
 
 .view-photo .add-photo {
-  width: 160rpx;
-  height: 160rpx;
+  width: 75rpx;
+  height: 62rpx;
 }
 
 .view-photo .img-photo {
@@ -45,4 +60,41 @@
   margin-left: 20rpx;
   margin-right: 20rpx;
   background: #cacaca;
+}
+
+.create {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.content {
+  margin-top: 50rpx;
+  margin-left: 24rpx;
+}
+
+.content-name {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.content-desc {
+  display: flex;
+  flex-flow: column;
+}
+
+.desc {
+  white-space: pre-line;
+  word-break: break-all;
+  margin-top: 30rpx;
+}
+
+.gray {
+  font-size: 32rpx;
+  color: #ddd;
+} 
+
+.name {
+  margin-right: 20rpx
 }

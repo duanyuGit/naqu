@@ -111,10 +111,11 @@ const net = {
         }
       },
       complete: function (res) {
+        wx.hideLoading();
         DEBUG && console.log(`Request for ${params.url} complete.--->${JSON.stringify(res)}`);
       }
     });
-    wx.hideLoading();
+   
   },
   //dealfail是否手动处理异常，是：true
   reqPromise: function (params, dealfail) {//get或post请求

@@ -22,8 +22,12 @@ Page({
     this.setData({
       community_id: community.oId
     });
+  },
+  
+  onShow:function() {
     this.loadData();
   },
+
   onPullDownRefresh: function () {
     this.setData({
       pull: PULL_DOWN,

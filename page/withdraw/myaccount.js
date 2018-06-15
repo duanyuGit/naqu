@@ -1,15 +1,12 @@
-// page/withdraw/withdraw.js
-const { with_draw } = require('../../util/api.js');
-const net = require('../../util/net.js');
-const util = require('../../util/util.js');
+// page/withdraw/myaccount.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    coinAddress:"",
-    amount:0
+    tokenAmount: 0,
+    user: null
   },
 
   /**
@@ -17,9 +14,10 @@ Page({
    */
   onLoad: function (options) {
     let user = wx.getStorageSync("user");
-    console.log("user=" + user.userWalletAddress);
+    console.log("user=" + user.token_amount);
     this.setData({
-      coinAddress: user.userWalletAddress
+      tokenAmount: user.token_amount,
+      user: user
     });
   },
 
@@ -27,84 +25,80 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
-  },
 
-  countChanged:function(e) {
-    let value = e.detail.value;
-    this.setData({
-      amount:value
-    });
+  },
+  withdraw: function () {
+    let userWalletAddress = this.data.user.userWalletAddress;
+    if (userWalletAddress && userWalletAddress !== '') {
+      wx.navigateTo({
+        url: `./withdraw`,
+      })
+    } else {
+      wx.navigateTo({
+        url: `./accountbind`,
+      })
+    }
+
   },
 
   loadData: function () {
     let me = this;
     let params = {};
-    params.url = with_draw;
+    params.url = bind_coin_address;
     params.data = {
-      amount: this.data.amount
+      wallet: this.data.coinAddress
     };
-    net.reqPromise(params, true).then((data) => {
-      console.log(data);
-      wx.navigateBack({
-        delta: 1
+    net.reqPromise(params, true).then((res) => {
+      let that = this;
+      console.log(res);
+      wx.redirectTo({
+        url: `./withdraw?coinAddress=${that.data.coinAddress}`,
       })
     }, (e) => {
       // me.callbackFail(e);
     });
   },
-
-  withdraw:function() {
-
-    if (this.data.amount <= 0) {
-      util.toast("提取金额需要大于0");
-      return;
-    }
-    this.loadData();
-
-  }
-
 
 })
