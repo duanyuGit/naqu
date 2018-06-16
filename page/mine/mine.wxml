@@ -1,6 +1,6 @@
 <!--pages/mine/mine.wxml-->
 <view class='container'>
-  <view class="header">
+  <view class="header" bindtap='goMyAccount'>
     <view class="user">
       <image class="avatar" src="{{userInfo.userAvatarURL}}"></image>
       <view class='info'>
@@ -28,12 +28,12 @@
       <view class='row-name'>分享给朋友</view>
       <image class='arrow' src='/img/toright.png'></image>
     </navigator>
-   
-      <navigator url="../withdraw/myaccount" class="row">
-        <view class='row-name'>我的趣币</view>
-        <image class='arrow' src='/img/toright.png'></image>
-      </navigator>
-    
+
+    <navigator url="../withdraw/myaccount" class="row">
+      <view class='row-name'>我的趣币</view>
+      <image class='arrow' src='/img/toright.png'></image>
+    </navigator>
+
     <navigator url="../mine/feedback" class="row">
       <view class='row-name'>关于我们</view>
       <image class='arrow' src='/img/toright.png'></image>

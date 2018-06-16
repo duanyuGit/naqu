@@ -19,7 +19,7 @@ page {
 
 .product .head {
   width: 100%;
-  padding: 0rpx 0rpx 0rpx 30rpx;
+  /* padding: 0rpx 0rpx 0rpx 30rpx; */
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -38,6 +38,7 @@ page {
   border-radius: 10rpx;
   margin-top: 20rpx;
   margin-bottom:20rpx; 
+   margin-left: 20rpx;
 }
 
 .product .head .user .user-info {

@@ -86,6 +86,11 @@ Page({
     this.setData({
       userInfo: res.user
     });
+  },
+  goMyAccount:function() {
+    wx.navigateTo({
+      url: '../withdraw/myaccount',
+    })
   }
 
 

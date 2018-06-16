@@ -1,6 +1,7 @@
 const scopeUtils = require('../../util/scope_utils.js');
 const { wx_login } = require('../../util/api.js');
 const net = require('../../util/net.js');
+const util = require('../../util/util.js');
 var app = getApp();
 Page({
   data: {
@@ -76,6 +77,8 @@ Page({
             wx.setStorageSync("user", res.user);
             that.goToIndex();
            
+          },(res)=> {
+            util.toast("请开启开发者模式(右上方分享)");
           });
         }
       })

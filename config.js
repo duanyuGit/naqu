@@ -1,7 +1,7 @@
 const cfg = {
     http: 'http://',
     https: 'https://',
-    host: '172.16.71.176:8080',
+    host: 'naqu.im',
     host_cdn: 'l.bainianaolai.com',
     api: function () {//接口服务器域名
         return this.http + this.host;
